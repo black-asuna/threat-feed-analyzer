@@ -91,6 +91,13 @@ IP,Score,Country,Domain,Last Reported
 185.220.101.4,100,DE,artikel10.org,2025-05-31T22:40:19+00:00
 ```
 
+## 📸 Preview
+
+Here’s the tool in action, checking IPs and exporting flagged results:
+
+![Threat Feed Analyzer Demo](demo.png)
+
+
 ## Security Note
 
 API key is stored securely in a .env file and excluded from GitHub with .gitignore. This keeps your key private even when your code is public.
