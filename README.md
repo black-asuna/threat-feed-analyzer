@@ -1,4 +1,10 @@
-# Threat Feed Analyzer
+# 🛡️ Threat Feed Analyzer
+
+![Python](https://img.shields.io/badge/python-3.10-blue.svg)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
+![Status](https://img.shields.io/badge/status-active-brightgreen)
+![Built by Soeli Llinas](https://img.shields.io/badge/Built%20by-Soeli%20Llinas-purple?style=flat-square&logo=github)
+
 
 A lightweight Python tool that leverages open-source threat intelligence feeds to identify and analyze suspicious IP addresses. Built as a cybersecurity portfolio project, it demonstrates API usage, batch automation, data filtering, and reporting — ideal for junior threat analysts and tech-savvy learners.
 
@@ -31,21 +37,24 @@ git clone https://github.com/black-asuna/threat-feed-analyzer.git
 cd threat-feed-analyzer
 ```
 
-### 2. Create your .env file
-In the root folder:
+### 2. Create your `.env` file
+In the root folder, create a file named `.env` and add:
 
+```bash
 API_KEY = your_abuseipdb_api_key_here
+```
 
-Never commit this file. It’s ignored via .gitignore
+Never commit this file. It’s ignored via `.gitignore`
 
 ### 3. Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
 ### 4. Add IPs to scan
-```bash
-Create a text file named ips.txt with one IP per line:
 
+Create a text file named `ips.txt` with one IP per line:
+
+```bash
 185.220.101.4
 
 8.8.8.8
@@ -58,7 +67,7 @@ python main.py
 ---
 
 ## Sample Output
-
+```yaml
 🔍 IP: 185.220.101.4
 
 Abuse Confidence Score: 100
@@ -70,12 +79,17 @@ Domain: artikel10.org
 ...
 
 ✅ Exported 1 flagged IP(s) to flagged_ips.csv
+```
 
-flagged_ips.csv includes IPs with an abuse score ≥ 50:
+## Output
 
+The tool creates a CSV report with only high-risk IPs (abuse score ≥ 50)
+
+```makefile
 IP,Score,Country,Domain,Last Reported
 
 185.220.101.4,100,DE,artikel10.org,2025-05-31T22:40:19+00:00
+```
 
 ## Security Note
 
@@ -83,13 +97,10 @@ API key is stored securely in a .env file and excluded from GitHub with .gitigno
 
 ## Future Improvements
 
-Add Shodan enrichment support
-
-Visualize abuse data in charts
-
-Add severity level tags (e.g., High, Medium, Low)
-
-    Turn into a simple web app with Flask
+- Add Shodan enrichment support
+- Visualize abuse data in charts
+- Add severity level tags (e.g., High, Medium, Low)
+- Turn into a simple web app with Flask
 
 ## 👩‍💻 Author
 
@@ -104,3 +115,8 @@ Aspiring Cybersecurity Analyst · Home Depot Associate ·
 ## License
 
 MIT License — use freely, with credit appreciated 
+
+
+---
+
+
