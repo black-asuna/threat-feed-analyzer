@@ -1,8 +1,12 @@
 import requests
 import time
 import csv
+import os
+from dotenv import load_dotenv
 
-API_KEY = 'de1ba68a024f735318919a0a05968c613469a51d8095ae9d4dac1373fe120082fa097cf89906527d'
+# Load API key from .env file
+load_dotenv()
+API_KEY = os.getenv("API_KEY")
 
 def check_ip(ip_address):
     url = 'https://api.abuseipdb.com/api/v2/check'
